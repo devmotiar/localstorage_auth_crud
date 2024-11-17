@@ -1,0 +1,29 @@
+<div class="max-w-sm mx-auto mt-10">
+    <h2 class="text-2xl font-bold mb-4">Edit Item</h2>
+    <form [formGroup]="editForm" (ngSubmit)="updateItem()">
+      <div class="mb-4">
+        <label class="block text-sm">Name</label>
+        <input
+          type="text"
+          formControlName="name"
+          class="w-full p-2 border rounded"
+        />
+      </div>
+      <div class="mb-4">
+        <label class="block text-sm">Age</label>
+        <input
+          type="number"
+          formControlName="age"
+          class="w-full p-2 border rounded"
+        />
+      </div>
+      <button
+        type="submit"
+        [disabled]="editForm.invalid"
+        class="w-full bg-yellow-500 text-white p-2 rounded"
+      >
+        Update
+      </button>
+    </form>
+  </div>
+  

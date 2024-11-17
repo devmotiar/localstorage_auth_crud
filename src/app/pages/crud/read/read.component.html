@@ -1,0 +1,33 @@
+<div class="max-w-4xl mx-auto mt-10">
+    <h2 class="text-2xl font-bold mb-4">Items List</h2>
+    <table class="table-auto w-full border border-gray-300">
+      <thead>
+        <tr>
+          <th class="px-4 py-2">Name</th>
+          <th class="px-4 py-2">Age</th>
+          <th class="px-4 py-2">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of data; let i = index" class="text-center">
+          <td class="px-4 py-2">{{ item.name }}</td>
+          <td class="px-4 py-2">{{ item.age }}</td>
+          <td class="px-4 py-2">
+            <button
+              class="text-blue-500"
+              routerLink="/crud/edit/{{ i }}"
+            >
+              Edit
+            </button>
+            <button
+              class="text-red-500 ml-4"
+              (click)="deleteItem(i)"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+ 
